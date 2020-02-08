@@ -20,9 +20,11 @@
 
                 <select class="custom-select" id="categoria">
                         <option>Productos categoria</option>
-                        <option value="1" {% if producto.categoria == '1' %} selected {%endif%} >Bebidas</option>
-                        <option value="2" {% if producto.categoria == '2' %} selected {%endif%} >Alimentos </option>
-                        <option value="3" {% if producto.categoria == '3' %} selected {% endif %} >Limpieza </option>
+                        {% for cat in categorias %}
+                                <option value={{ cat.id }} {% if producto.categoria.id == cat.id %} selected {%endif%}> {{ cat.nombre }} </option>
+                        {% endfor %}
+
+
                 </select>   
         </div>
 

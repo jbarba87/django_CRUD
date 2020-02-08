@@ -14,13 +14,9 @@
             {% for el in producto %}
             <tr>
                 <td>{{ el.producto }}</td>
-                <!-- <td>{{ el.categoria }}</td> -->
-                <td>
-                    {% if el.categoria == '1' %} Bebidas {%endif%}
-                    {% if el.categoria == '2' %} Alimentos {%endif%}
-                    {% if el.categoria == '3' %} Limpieza {%endif%}
 
-                </td>
+                <!-- el.categoria es foreign key al modelo Categorias -->
+                <td>{{ el.categoria.nombre }}</td>
                 <td>{{ el.fecha }}</td>
 
                 <td>{{ el.precio }}</td>
